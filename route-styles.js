@@ -14,7 +14,7 @@
             return {
                 restrict: 'E',
                 link: function(scope, elem){
-                    var html = '<link rel="stylesheet" ng-repeat="(routeCtrl, cssUrl) in routeStyles" ng-href="{{cssUrl}}" >';
+                    var html = '<link rel="stylesheet" ng-repeat="(routeCtrl, cssUrl) in routeStyles" ng-href="{[{cssUrl}]}" >';
                     elem.append($compile(html)(scope));
                     scope.routeStyles = {};
                     $rootScope.$on('$routeChangeStart', function (e, next) {
